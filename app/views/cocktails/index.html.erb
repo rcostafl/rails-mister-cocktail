@@ -1,0 +1,7 @@
+<div class="main">
+  <div class="container">
+      <% @cocktails.each do |cocktail| %>
+        <p><strong>Name: </strong> <%= link_to cocktail.name, "/cocktails/#{cocktail.id}" %> </p>
+      <% end %>
+  </div>
+</div>

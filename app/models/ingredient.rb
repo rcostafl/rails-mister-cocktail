@@ -1,0 +1,8 @@
+# frozen_string_literal: true
+
+# model class for table ingredients
+class Ingredient < ApplicationRecord
+  validates :name, uniqueness: true, presence: true
+  has_many :doses
+  has_many :cocktails, through: :doses
+end
