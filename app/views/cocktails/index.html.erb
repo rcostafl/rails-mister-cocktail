@@ -1,5 +1,5 @@
 <div class="main">
-  <div class="container">
+  <div class="container mt-5 pt-5">
       <% @cocktails.each do |cocktail| %>
         <p><strong>Name: </strong> <%= link_to cocktail.name, "/cocktails/#{cocktail.id}" %> </p>
       <% end %>

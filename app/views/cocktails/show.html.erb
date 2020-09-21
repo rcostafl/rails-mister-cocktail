@@ -1,20 +1,27 @@
 <div class="main">
-  <div class="container">
-    <div>
-      <h1><%= @cocktail.name %></h1>
-    </div>
-    <div>
-      <%= link_to("+ Add new Dose", new_cocktail_dose_path(@cocktail)) %>
+  <div class="container mt-5 pt-5">
+    <h1 class="text-center mx-auto font-weight-bold mb-5"><%= @cocktail.name %></h1>
+    <div class="d-flex mt-5">
+      <div class="image-md-placeholder">
+        <%= image_tag(@cocktail.image_path || "https://image.shutterstock.com/image-vector/default-ui-image-placeholder-wireframes-600w-1037719192.jpg", class: "image-md")%>
+      </div>
+      <div class="ml-5">
+        <h2 class="font-weight-bold"><em>Ingredients</em></h2>
+        <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li>
+            <span><%= dose.description %></span>
+            <span><%= dose.ingredient.name %></span>
+            <span><%= link_to('delete', dose_path(dose), method: "DELETE") %></span>
+          </li>
+        <% end %>
+        </ul>
 
-      <ul>
-      <% @cocktail.doses.each do |dose| %>
-        <li>
-          <span><%= dose.description %></span>
-          <span><%= dose.ingredient.name %></span>
-          <span><%= link_to('delete', dose_path(dose), method: "DELETE") %></span>
-        </li>
-      <% end %>
-      </ul>
+        <div>
+          <h5>+ Add New Ingredient</h4>
+          <%= render("doses/new_form")%>
+        </div>
+      </div>
     <div>
   </div>
 </div>
