@@ -1,1 +1,50 @@
 // Specific CSS for your home-page
+.main-wrapper-pages{
+  background-image: linear-gradient(to right, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), asset-url("cocktail_background.png");
+  background-size: cover;
+  width: auto;
+  height: 100vh;
+}
+
+#navbar{
+  background-color: #341C4C;
+
+  a {
+    color: white;
+    font-size: 1.5em;
+  }
+}
+
+.title {
+  font-size: 95px;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 1.8em 0;
+  text-align: center;
+  color: white;
+  font-family: $title-font
+}
+
+.home-buttom {
+  margin: 1em;
+  text-decoration: none;
+  color: white;
+
+  a {
+    color: white;
+  }
+  &:hover{
+    text-decoration: underline;
+  }
+
+  &:first-of-type{
+    margin-right: 5em;
+  }
+
+  &:last-of-type{
+    margin-left: 5em;
+  }
+
+}
+
+
