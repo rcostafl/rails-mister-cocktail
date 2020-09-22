@@ -9,12 +9,6 @@ local:
 cloudinary:
   service: Cloudinary
 
-production:
-  cloud_name: dxsgj5x3x
-  api_key: '281391412245543'
-  api_secret: u7XuHD30FhZSVejCiiiOuLFIuZQ
-  enhance_image_tag: true
-  static_file_support: true
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
