@@ -9,9 +9,6 @@ local:
 cloudinary:
   service: Cloudinary
 
-production:
-  service: Cloudinary
-
 
 # production:
 #   cloud_name: dxsgj5x3x
