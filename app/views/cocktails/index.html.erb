@@ -1,7 +1,25 @@
 <div class="main">
-  <div class="container mt-5 pt-5">
-      <% @cocktails.each do |cocktail| %>
-        <p><strong>Name: </strong> <%= link_to cocktail.name, "/cocktails/#{cocktail.id}" %> </p>
-      <% end %>
+  <div class="my-container mt-5 pt-5">
+      <div class="grid">
+        <% img_placeholder = "default-ui-image-placeholder-wireframes-600w-1037719192_uukskj" %>
+        <% img_options = {
+          width: 400,
+          height: 300,
+          crop: :fit
+        }%>
+        <% @cocktails.each do |cocktail| %>
+          <% cocktail.photo.attached? ? image_key= cocktail.photo.key : image_key= img_placeholder %>
+          <% image_path = cl_image_path(image_key, img_options) %>
+
+          <%link_options = {
+            class: "image-card",
+            style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('#{image_path}')"
+          }%>
+          <%= link_to(cocktail_path(cocktail), link_options )  do %>
+            <h3> <%= cocktail.name %></h3>
+          <% end %>
+        <% end %>
+      </div>
   </div>
 </div>
+

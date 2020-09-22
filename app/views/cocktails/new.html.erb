@@ -4,7 +4,7 @@
     <div class="w-50 mx-auto py-3 px-4 border">
       <%=simple_form_for(@cocktail) do |f| %>
         <%= f.input :name%>
-        <%= f.input :image_path%>
+        <%= f.input :photo, as: :file%>
         <%= f.submit %>
       <% end %>
     </div>
